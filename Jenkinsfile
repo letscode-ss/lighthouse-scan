@@ -6,8 +6,7 @@ pipeline {
     stages {
         stage('Run lighthouse') { 
             steps {
-                sh "npm install --verbose"
-                sh "node unauth.js --url=${unauthUrl}"
+                sh "npm run unauth -- --url=${unauthUrl}"
                 lighthouseReport('target/report.json')
             }
         }

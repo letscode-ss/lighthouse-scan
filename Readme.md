@@ -1,2 +1,1 @@
 # lighthouse-scan
-# lighthouse-scan

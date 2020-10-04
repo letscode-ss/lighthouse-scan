@@ -1,5 +1,7 @@
 FROM containerci/google-chrome-headless:latest
 
+RUN npm install --verbose
+
 COPY . /home/chrome/reports
 
-RUN npm install --verbose
+ENTRYPOINT ['npm','run', 'unauth']

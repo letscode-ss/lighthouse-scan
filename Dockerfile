@@ -1,9 +1,9 @@
 FROM containerci/google-chrome-headless:latest
 
-RUN mkdir -p /home/chrome/lighthouse
+RUN mkdir -p /opt/lighthouse
 
-WORKDIR /home/chrome/lighthouse
+WORKDIR  /opt/lighthouse
 
-COPY .  /home/chrome/lighthouse
+COPY package.json /opt/lighthouse
 
 RUN npm install --verbose

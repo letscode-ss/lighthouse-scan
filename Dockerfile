@@ -4,8 +4,8 @@ VOLUME ['/home/chrome/reports']
 
 COPY package.json /home/chrome/reports
 
-RUN cd /home/chrome/reports && npm install
+USER root
 
-COPY node_modules /home/chrome/reports/
+RUN cd /home/chrome/reports && npm install -g
 
 CMD ['/bin/bash']

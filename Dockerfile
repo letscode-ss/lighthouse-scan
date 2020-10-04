@@ -2,9 +2,8 @@ FROM containerci/google-chrome-headless:latest
 
 USER root
 
-COPY package.json /home/chrome/reports
+COPY package.json .
 
-
-RUN cd /home/chrome/reports && npm install -g
+RUN npm install -g
 
 CMD ['/bin/bash']

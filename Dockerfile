@@ -26,7 +26,6 @@ RUN rm -rf /var/lib/apt/lists/* && \
   mkdir -p /home/chrome/reports && chown -R chrome:chrome /home/chrome
 
 # some place we can mount and view lighthouse reports
-VOLUME /home/chrome/reports
 WORKDIR /home/chrome/reports
 
 COPY . /home/chrome/reports
@@ -38,8 +37,6 @@ COPY entrypoint.sh /usr/bin/entrypoint
 USER chrome
 
 ENV CHROME_FLAGS="--headless --disable-gpu --no-sandbox"
-
-VOLUME /home/chrome/reports
 
 # Drop to cli
 ENTRYPOINT ["entrypoint"]

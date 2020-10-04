@@ -28,15 +28,15 @@ RUN rm -rf /var/lib/apt/lists/* && \
 # some place we can mount and view lighthouse reports
 WORKDIR /home/chrome/reports
 
-COPY . /home/chrome/reports
-RUN npm install --verbose
-
 COPY entrypoint.sh /usr/bin/entrypoint
 
 # Run Chrome non-privileged
 USER chrome
 
 ENV CHROME_FLAGS="--headless --disable-gpu --no-sandbox"
+
+COPY . /home/chrome/reports
+RUN npm install --verbose
 
 # Drop to cli
 ENTRYPOINT ["entrypoint"]

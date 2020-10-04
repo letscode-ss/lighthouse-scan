@@ -2,8 +2,11 @@ FROM containerci/google-chrome-headless:latest
 
 WORKDIR /home/chrome/reports
 
-COPY package.json package-lock.json ./
+USER root
 
-RUN npm install --no-optional && npm cache clean --force
+RUN npm install -g express@^4.17.1
+RUN npm install -g express-session@^1.16.2
+RUN npm install -g lighthouse@^6.4.0
+RUN npm install -g puppeteer@^5.3.1
 
-COPY . .
+USER chrome

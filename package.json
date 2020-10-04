@@ -1,11 +1,13 @@
-  {
-    "scripts": {
-      "unauth": "node unauth.js"
-    },
-    "dependencies": {
-      "express": "^4.17.1",
-      "express-session": "^1.16.2",
-      "lighthouse": "^6.4.0",
-      "puppeteer": "^5.3.1"
-    }
+{
+  "scripts": {
+    "unauth": "node unauth.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "lighthouse": "^6.4.0",
+    "puppeteer": "^5.3.1"
   }
+}
+
+

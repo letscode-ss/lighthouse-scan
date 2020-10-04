@@ -1,9 +1,9 @@
 FROM containerci/google-chrome-headless:latest
 
-USER root
+WORKDIR /home/chrome/reports
 
-COPY package.json .
+COPY package.json package-lock.json ./
 
-RUN npm install -g
+RUN npm install --no-optional && npm cache clean --force
 
-CMD ['/bin/bash']
+COPY . .
